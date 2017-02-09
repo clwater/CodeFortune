@@ -8,6 +8,8 @@ class MainHandler(tornado.web.RequestHandler):
 
 class AutoFortune(tornado.web.RequestHandler):
     def get(self):
+        from fortune import fortune
+        fortune()
         self.write("aaa")
 
 class MyFortune(tornado.web.RequestHandler):
