@@ -9,8 +9,10 @@ class MainHandler(tornado.web.RequestHandler):
 class AutoFortune(tornado.web.RequestHandler):
     def get(self):
         from fortune import fortune
-        fortune()
-        self.write("aaa")
+        g = fortune()
+        self.render("html/fortune.html", title='auto', gua=g[1], guaming=g[2], qian=g[3],  guaci=g[4], yunshi=g[5], daima='null')
+
+
 
 class MyFortune(tornado.web.RequestHandler):
     def get(self):
