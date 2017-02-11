@@ -1,7 +1,7 @@
 import random
 
-def getAotu():
-
+def getAotuwithseed(seed):
+    random.seed(seed)
 
     a1 = random.random()
     a2 = random.random()
@@ -9,6 +9,52 @@ def getAotu():
     b1 = random.random()
     b2 = random.random()
     b3 = random.random()
+
+    if a1 > 0.5:
+        a1 = 1
+    else:
+        a1 = 0
+    if a2 > 0.5:
+        a2 = 1
+    else:
+        a2 = 0
+    if a3 > 0.5:
+        a3 = 1
+    else:
+        a3 = 0
+
+    if b1 > 0.5:
+        b1 = 1
+    else:
+        b1 = 0
+    if b2 > 0.5:
+        b2 = 1
+    else:
+        b2 = 0
+    if b3 > 0.5:
+        b3 = 1
+    else:
+        b3 = 0
+
+    a = a1 * 4 + a2 * 2 + a3
+    b = b1 * 4 + b2 * 2 + b3
+    _temp = getDivination(a, b)
+    return _temp
+
+
+def getAotu():
+    import time
+
+    seed = time.strftime('%Y%m%d', time.localtime(time.time()))
+    random.seed(seed)
+
+
+    b1 = random.random()
+    a2 = random.random()
+    a3 = random.random()
+    b2 = random.random()
+    b3 = random.random()
+    a1 = random.random()
 
     if a1 > 0.5:
         a1 = 1
@@ -238,4 +284,8 @@ def getDivination(a , b):
 
 def fortune():
     finalgx = getAotu()
+    return finalgx
+
+def fortunewithseed(seed):
+    finalgx = getAotuwithseed(seed)
     return finalgx
