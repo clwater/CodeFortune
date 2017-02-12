@@ -4,7 +4,9 @@ import tornado.web
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
-        self.render("html/index.html", title="My title", h1="it is h1")
+        self.render("html/index.html", title="My title", y_day="正月十六 丁酉年 ︻ 鸡年 ︼ 壬寅月 庚午日"
+                    , r_day="二零一七年 二月十二日  没有节"
+                    , day="12" , yi="写bug" , ji="改需求")
 
 class AutoFortune(tornado.web.RequestHandler):
     def get(self):
