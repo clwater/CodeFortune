@@ -4,6 +4,8 @@ import tornado.web
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
+        from date_utils import getNewDate
+        getNewDate()
         self.render("html/index.html", title="My title", y_day="正月十六 丁酉年 ︻ 鸡年 ︼ 壬寅月 庚午日"
                     , r_day="二零一七年 二月十二日  没有节"
                     , day="12" , yi="写bug" , ji="改需求")
